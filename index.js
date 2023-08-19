@@ -1,56 +1,51 @@
-alert("connected");
+
 
 
 //Detecting Button Press
-for(var i=0;i<document.querySelectorAll(".drum").length;i++)
-{
+for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", handleClick);
 }
-function handleClick()
-{
+function handleClick() {
     var buttonInnerHTML = this.innerHTML;
     makesound(buttonInnerHTML);
-    
+
 }
 
 
 //Detecting Keyboard Press
-document.addEventListener("keypress", function(event)
-{
+document.addEventListener("keypress", function (event) {
     makesound(event.key)
 });
 
 
 //fn that assigns the specific button or key pressed to its resp sound
-function makesound(key)
-{
-    switch (key)
-    {
-        case "w":   
+function makesound(key) {
+    switch (key) {
+        case "w":
             var audio = new Audio('sounds/tom-1.mp3')
             audio.play();
             break;
-        case "a":   
+        case "a":
             var audio = new Audio('sounds/tom-2.mp3')
             audio.play();
             break;
-        case "s":   
+        case "s":
             var audio = new Audio('sounds/tom-3.mp3')
             audio.play();
             break;
-        case "d":   
+        case "d":
             var audio = new Audio('sounds/tom-4.mp3')
             audio.play();
             break;
-        case "j":   
+        case "j":
             var audio = new Audio('sounds/snare.mp3')
             audio.play();
             break;
-        case "k":   
+        case "k":
             var audio = new Audio('sounds/crash.mp3')
             audio.play();
             break;
-        case "l":   
+        case "l":
             var audio = new Audio('sounds/kick-bass.mp3')
             audio.play();
             break;
