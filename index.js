@@ -8,6 +8,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 function handleClick() {
     var buttonInnerHTML = this.innerHTML;
     makesound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML)
 
 }
 
@@ -15,6 +16,7 @@ function handleClick() {
 //Detecting Keyboard Press
 document.addEventListener("keypress", function (event) {
     makesound(event.key)
+    buttonAnimation(event.key)
 });
 
 
@@ -55,6 +57,11 @@ function makesound(key) {
     }
 }
 
-
-// var audio = new Audio('sounds/tom-1.mp3')
-// audio.play();
+function buttonAnimation()
+{
+    var activeButton = document.querySelector("." + currentKey)
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed")
+    },100)
+}
